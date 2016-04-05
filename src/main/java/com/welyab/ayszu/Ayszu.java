@@ -14,12 +14,7 @@
  * limitations under the License.
  */
 
-package com.welyab.ayszu.util.meditation;
+package com.welyab.ayszu;
 
-import java.lang.reflect.Method;
-
-public interface MethodSource extends ExecutableSource {
-
-	@Override
-	public Method usingArguments(Class<?>[] argumentTypes);
+public final class Ayszu {
 }

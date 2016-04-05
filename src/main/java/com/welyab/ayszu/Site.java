@@ -14,11 +14,7 @@
  * limitations under the License.
  */
 
-package com.welyab.ayszu.util.meditation;
+package com.welyab.ayszu;
 
-import java.lang.reflect.Field;
-
-public interface FieldSource extends MemberSource {
-
-	public Field get();
+public interface Site {
 }
