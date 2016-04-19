@@ -14,11 +14,7 @@
  * limitations under the License.
  */
 
-package com.welyab.ayszu;
+package com.welyab.ayszu.dbmodel;
 
-import java.util.List;
-
-public interface Plugin {
-
-	public List<PluginDependency> getDependencies();
+public class Publication {
 }
