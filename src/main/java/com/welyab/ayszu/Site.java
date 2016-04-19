@@ -19,12 +19,13 @@ package com.welyab.ayszu;
 import java.util.List;
 
 /**
- * A <code>Site</code> in <code>Ayszu</code> is a separated area managed by <i>Administration
- * Site</i>.
+ * A <code>Site</code> in <code code="Ayszu">Ayszu</code> is a separated area managed by
+ * <i>Administration Site</i>.
  *
  * <p>
  * It is possible to apply specific rules, pages, posts, plugins, themes, users, etc. without
- * interfering in another <code>Sites</code>.
+ * interfering in another <code>Sites</code>. The permission system of
+ * <code class="logo">Ayszu</code>
  *
  * <p>
  * <code>Ayszu</code> has an special <code>Site</code> called <i>Administration Site</i>, that
@@ -36,6 +37,7 @@ import java.util.List;
  * @see Plugin
  */
 public interface Site {
+
 
 	/**
 	 * Returns the name of the site.
@@ -52,7 +54,7 @@ public interface Site {
 	public String getDescription();
 
 	/**
-	 * Returns the <code>Site</code> path.
+	 * Returns the default <code>Site</code> path.
 	 *
 	 * <p>
 	 * A <code>Site</code> path is unique in <code>Ayszu System</code>.
