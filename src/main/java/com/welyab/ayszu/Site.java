@@ -19,17 +19,15 @@ package com.welyab.ayszu;
 import java.util.List;
 
 /**
- * A <code>Site</code> in <code code="Ayszu">Ayszu</code> is a separated area managed by
- * <i>Administration Site</i>.
+ * As described in <a href="http://www.thefreedictionary.com/Site" alt=
+ * "Dictionary definition of website" target="_blank">The Free Dictionary</a>, an website is a set
+ * of interconnected web pages, generally located on the same server.
  *
  * <p>
- * It is possible to apply specific rules, pages, posts, plugins, themes, users, etc. without
- * interfering in another <code>Sites</code>. The permission system of
- * <code class="logo">Ayszu</code>
- *
- * <p>
- * <code>Ayszu</code> has an special <code>Site</code> called <i>Administration Site</i>, that
- * manages other sites.
+ * In <span class="ayszu-logo">Ayszu</span>, a website, or just <i>site</i>, also is a set of
+ * interconnected webpages, or just <i>pages</i>. To each site, it is possible to apply specific
+ * {@link Theme}, {@link Plugin}, users, rules, and any other feature available in
+ * <span class="ayszu-logo">Ayszu</span> without interfering in other sites.
  *
  * @author Welyab Paula
  *
@@ -38,6 +36,14 @@ import java.util.List;
  */
 public interface Site {
 
+
+	/**
+	 * The identifier of a site is unique inside <span class="ayszu-logo">Ayszu</span> located in
+	 * the same server.
+	 *
+	 * @return The identifier of site.
+	 */
+	public String getIdentifier();
 
 	/**
 	 * Returns the name of the site.
@@ -54,7 +60,9 @@ public interface Site {
 	public String getDescription();
 
 	/**
-	 * Returns the default <code>Site</code> path.
+	 * The path of site is the portion of URL showed in the browser that identifies the site.
+	 * Generally, is located after servlet context path until the next slash character (
+	 * <code>'/'</code>).
 	 *
 	 * <p>
 	 * A <code>Site</code> path is unique in <code>Ayszu System</code>.
@@ -66,11 +74,6 @@ public interface Site {
 	public String getPath();
 
 	/**
-	 * Returns all registered paths of a <code>Site</code>, including the path returned by
-	 * <code>{@link #getPath()}</code>.
-	 *
-	 * A <code>Site</code> path is unique in <code>Ayszu System</code>.
-	 *
 	 * @return The registered paths for a <code>Site</code>.
 	 *
 	 * @see #getPath()
@@ -78,15 +81,10 @@ public interface Site {
 	public List<String> getPaths();
 
 	/**
-	 * Returns the parent <code>Site</code>.
+	 * Returns the parents of the <code>Site</code>.
 	 *
-	 * <p>
-	 * The unique <code>Site</code> without a parent is the <i>Administration Site</i>, all others
-	 * are children of <i>Administration Site</i> or another site. Cyclic <code>Site</code> parent
-	 * relation are not allowed.
-	 *
-	 * @return The parent <code>Site</code>, or <code>null</code> if this site is the
-	 *         <i>Administration Site</i>.
+	 * @return The parents of the <code>Site</code>. May be returns a empty list, indicating this
+	 *         site has no parents.
 	 */
-	public Site getParent();
+	public List<Site> getParents();
 }

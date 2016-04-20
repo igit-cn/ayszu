@@ -16,5 +16,6 @@
 
 package com.welyab.ayszu;
 
-public final class Ayszu {
+public interface Ayszu {
+	public Location getLocation();
 }
